@@ -4,6 +4,11 @@
     <title>Home</title>
 </head>
 <body>
-    <h1 style="color: red;">Hello, {{ user }}</h1>
+    {% if user.is_authenticated %}
+        <h1>HI!!! You are authenticated!</h1>
+        <h1 style="color: red;">Hello, {{ user.name }}</h1>
+    {% else %}
+        <h1>WHO ARE YOU?</h1>
+    {% endif %}
 </body>
 </html>

@@ -3,4 +3,10 @@ from django.shortcuts import render
 
 # Create your views here.
 def album_page(request):
-    return render(request, 'music/album.html', context={"user": "SERJ"})
+    context = {
+            "user": {
+                "name": "Twenty-one Pilots",
+                "is_authenticated": True
+                },
+            }
+    return render(request, 'music/album.html', context=context)
